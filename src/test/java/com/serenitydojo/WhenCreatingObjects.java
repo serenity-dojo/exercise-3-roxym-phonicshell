@@ -10,25 +10,34 @@ public class WhenCreatingObjects {
     //attributes belong to the dog
     String name = "Fido";
     String favoriteToy = "Bone";
+//    String makeNoise =  "Woof";
     int age = 5;
+    boolean isFed = true;
+
 
     //create the Dog object
-    Dog fido = new Dog();
+    Dog fido = new Dog("Fido","Bone", 5, "Woof", true);
 
-    // actual attributes values
-    fido.setName("Fido");
+    // attributes values
     System.out.println(fido.getName());
-
-    fido.setFavoriteToy("Bone");
     System.out.println(fido.getFavoriteToy());
-
-    fido.setAge(5);
     System.out.println(fido.getAge());
-
     }
 
+    @Test
+public void dog_makes_noise(){
+        Dog fido = new Dog("Fido","Bone", 5, "Woof", true);
 
-//        Assert.assertEquals(fido.getName(), "Fido");
-//        Assert.assertEquals(fido.getFavoriteToy(), "Bone");
-//        Assert.assertEquals(fido.getAge(), 5);
+        fido.makeNoise();
+
+        //System.out.println(fido.getMakeNoise());
+
+}
+@Test
+public void dog_is_fed(){
+    Dog fido = new Dog("Fido","Bone", 5, "Woof", true);
+    fido.feed(true);
+    //System.out.println(fido.getIsFed());
+
+}
 }
